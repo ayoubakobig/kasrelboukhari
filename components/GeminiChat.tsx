@@ -26,8 +26,8 @@ const GeminiChat: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Placeholder for API call - would need actual Gemini API integration
-      // For now, show a simple response
+      // TODO: Replace with actual Gemini API integration
+      // This is a mock response for demonstration purposes
       setTimeout(() => {
         const botResponse: ChatMessage = {
           role: 'model',

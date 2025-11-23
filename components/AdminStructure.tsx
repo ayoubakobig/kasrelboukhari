@@ -1,6 +1,7 @@
 import React from 'react';
 import { Building2 } from 'lucide-react';
 import { DAIRA_DATA } from '../constants';
+import { formatPopulation, formatArea } from '../utils';
 
 const AdminStructure: React.FC = () => {
   const totalMunicipalities = DAIRA_DATA.reduce((sum, daira) => sum + daira.municipalities.length, 0);
@@ -44,8 +45,8 @@ const AdminStructure: React.FC = () => {
                 <div key={mIndex} className="flex justify-between items-center text-sm py-2 border-b border-stone-100 last:border-0">
                   <span className="text-stone-700 font-medium">{municipality.name}</span>
                   <div className="flex gap-4 text-stone-500">
-                    <span>{municipality.area} كم²</span>
-                    <span>{(municipality.population / 1000).toFixed(1)}k</span>
+                    <span>{formatArea(municipality.area)}</span>
+                    <span>{formatPopulation(municipality.population)}</span>
                   </div>
                 </div>
               ))}
